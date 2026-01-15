@@ -1,0 +1,15 @@
+{
+	"name": "schams-net/aws-iam-signed-requests",
+	"description": "Demo implementation of the AWS Signature Version 4 for API requests.",
+	"require": {
+		"vlucas/phpdotenv": "*",
+		"league/flysystem": "*",
+		"guzzlehttp/guzzle": "*",
+		"aws/aws-sdk-php": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"SchamsNet\\AwsIamSignedRequests\\": "Classes"
+		}
+	}
+}
