@@ -19,7 +19,7 @@ class RequestHandler
     public function __construct($baseUri)
     {
         // Base URI
-        $this->baseUri = $baseUri . "/v1/upload";
+        $this->baseUri = $baseUri;
 
         // GuzzleHttp\Client
         $this->client = new Client([

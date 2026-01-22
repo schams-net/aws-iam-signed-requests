@@ -17,6 +17,7 @@ class Bootstrap
 
     private ?string $apiKey;
     private ?string $apiEndpointUri;
+    private ?string $apiEndpointPath;
     private ?string $awsRegion;
     private ?string $awsAccessKeyId;
     private ?string $awsSecretAccessKey;
@@ -45,6 +46,7 @@ class Bootstrap
     {
         $this->apiKey = ($_ENV["API_KEY"] ? $_ENV["API_KEY"] : null);
         $this->apiEndpointUri = ($_ENV["API_ENDPOINT_URI"] ? $_ENV["API_ENDPOINT_URI"] : null);
+        $this->apiEndpointPath = ($_ENV["API_ENDPOINT_PATH"] ? $_ENV["API_ENDPOINT_PATH"] : null);
         $this->awsRegion = ($_ENV["API_ENDPOINT_REGION"] ? $_ENV["API_ENDPOINT_REGION"] : null);
         $this->awsAccessKeyId = ($_ENV["AWS_ACCESS_KEY_ID"] ? $_ENV["AWS_ACCESS_KEY_ID"] : null);
         $this->awsSecretAccessKey = ($_ENV["AWS_SECRET_ACCESS_KEY"] ? $_ENV["AWS_SECRET_ACCESS_KEY"] : null);
@@ -110,7 +112,7 @@ class Bootstrap
     private function process(string $file, string $mimeType): Response
     {
         // Instantiate a request handler
-        $requestHandler = new RequestHandler($this->apiEndpointUri);
+        $requestHandler = new RequestHandler($this->apiEndpointUri . $this->apiEndpointPath);
 
         try {
 
