@@ -113,6 +113,7 @@ class Bootstrap
     {
         // Instantiate a request handler
         $requestHandler = new RequestHandler($this->apiEndpointUri . $this->apiEndpointPath);
+        echo "API endpoint: " . $this->apiEndpointUri . $this->apiEndpointPath . PHP_EOL;
 
         try {
 
